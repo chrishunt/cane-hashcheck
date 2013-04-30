@@ -57,6 +57,8 @@ gem 'cane-hashcheck'
 Use the `Cane::HashCheck` in your quality rake task:
 
 ```ruby
+require 'cane/hashcheck'
+
 desc 'Check code quality'
 Cane::RakeTask.new(:quality) do |task|
   task.use Cane::HashCheck
