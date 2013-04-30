@@ -66,7 +66,7 @@ end
 Check code quality using rake:
 
 ```bash
-rake quality
+$ rake quality
 ```
 
 See the [cane project](https://github.com/square/cane) for general usage
