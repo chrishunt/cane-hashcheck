@@ -1,4 +1,4 @@
-# Cane::Hashcheck
+# Cane::HashCheck
 
 TODO: Write a gem description
 

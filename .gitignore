@@ -1,6 +1,6 @@
 *.gem
 *.rbc
-.gitignore
+*.swp
 .bundle
 .config
 .yardoc
