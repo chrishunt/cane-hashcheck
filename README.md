@@ -1,29 +1,82 @@
 # Cane::HashCheck
 
-TODO: Write a gem description
+`cane-hashcheck` enforces Ruby 1.9 hash syntax in your Ruby project using
+[cane](https://github.com/square/cane).
 
-## Installation
+## Description
 
-Add this line to your application's Gemfile:
+If you no longer like hash rockets, `cane-hashcheck` is for you. For example,
+see this ugliness?
 
-    gem 'cane-hashcheck'
+```ruby
+# person.rb
+def options
+  {
+    :name => 'Bob',
+    :age => 30,
+    :location => 'Seattle'
+  }
+end
+```
 
-And then execute:
+When we run run our quality rake task, we are scolded for using the old hash
+syntax and encouraged to make a change on three lines:
 
-    $ bundle
+```bash
+$ rake quality
+Ruby 1.9 hash syntax violation (3):
 
-Or install it yourself as:
+  person.rb:3
+  person.rb:4
+  person.rb:5
 
-    $ gem install cane-hashcheck
+  Total Violations: 3
+```
+
+Ah, much better:
+
+```ruby
+# person.rb
+def options
+  {
+    name: 'Bob',
+    age: 30,
+    location: 'Seattle'
+  }
+end
+```
 
 ## Usage
 
-TODO: Write usage instructions here
+Add `cane-hashcheck` to your project's Gemfile:
+
+```ruby
+gem 'cane-hashcheck'
+```
+
+Use the `Cane::HashCheck` in your quality rake task:
+
+```ruby
+desc 'Check code quality'
+Cane::RakeTask.new(:quality) do |task|
+  task.use Cane::HashCheck
+end
+```
+
+Check code quality using rake:
+
+```bash
+rake quality
+```
+
+See the [cane project](https://github.com/square/cane) for general usage
+instructions.
 
 ## Contributing
 
 1. Fork it
 2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create new Pull Request
+3. Commit your changes, with tests (`git commit -am 'Add some feature'`)
+4. Run the tests (`bundle exec rake`)
+5. Push to the branch (`git push origin my-new-feature`)
+6. Create new Pull Request
