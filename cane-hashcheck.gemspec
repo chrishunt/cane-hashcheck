@@ -8,9 +8,9 @@ Gem::Specification.new do |spec|
   spec.version       = Cane::Hashcheck::VERSION
   spec.authors       = ['Chris Hunt']
   spec.email         = ['c@chrishunt.co']
-  spec.description   = %q{TODO: Write a gem description}
-  spec.summary       = %q{TODO: Write a gem summary}
-  spec.homepage      = ''
+  spec.description   = %q{Create Cane violations for pre-Ruby 1.9 hash syntax}
+  spec.summary       = %q{Create Cane violations for pre-Ruby 1.9 hash syntax}
+  spec.homepage      = 'https://github.com/chrishunt/cane-hashcheck'
   spec.license       = 'MIT'
 
   spec.files         = `git ls-files`.split($/)
