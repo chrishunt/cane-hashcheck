@@ -1,4 +1,4 @@
-# Cane Hash Check
+# cane-hashcheck
 
 `cane-hashcheck` enforces Ruby 1.9 hash syntax in your Ruby project using
 [cane](https://github.com/square/cane).
