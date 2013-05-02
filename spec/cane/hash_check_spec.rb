@@ -26,17 +26,17 @@ describe Cane::HashCheck do
       RUBY
     end
 
-    it 'has a violation for each hash rocket' do
+    it 'has a violation for each invalid hash rocket' do
       expect(subject.violations.count).to eq 2
     end
 
-    it 'returns the offending file names' do
+    it 'puts the offending file name in the violation' do
       subject.violations.each do |violation|
         expect(violation[:file]).to eq file.path
       end
     end
 
-    it 'returns the offending file lines' do
+    it 'puts the offending line number in the violation' do
       expect(subject.violations[0][:line]).to eq 2
       expect(subject.violations[1][:line]).to eq 5
     end
