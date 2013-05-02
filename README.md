@@ -19,8 +19,8 @@ def options
 end
 ```
 
-When we run run our quality rake task, we are scolded for using the old hash
-syntax and encouraged to make a change on three lines:
+When we run our quality rake task, we are scolded for using the old hash syntax
+and encouraged to make a change on three lines:
 
 ```bash
 $ rake quality
