@@ -49,7 +49,7 @@ module Cane
     end
 
     def invalid?(line)
-      line =~ /([^'A-Z\d])\s+=>\s+/
+      line =~ /([^'"A-Z\d])\s+=>\s+/
     end
 
     def file_names

@@ -23,7 +23,10 @@ describe Cane::HashCheck do
           TOTALLY => :valid,
           18 => 1 # this is valid, hash rockets are required for ints
         }
-        { 'also' => 'valid' }
+        {
+          'also' => 'valid',
+          "and also" => 'valid'
+        }
       RUBY
     end
 
