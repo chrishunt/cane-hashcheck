@@ -21,6 +21,7 @@ describe Cane::HashCheck do
           totally: 'valid',
           :not => :valid,
           TOTALLY => :valid,
+          LOTS_OF    =>   :whitespace_is_valid,
           18 => 1 # this is valid, hash rockets are required for ints
         }
         {
