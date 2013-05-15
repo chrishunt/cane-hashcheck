@@ -20,7 +20,8 @@ describe Cane::HashCheck do
         {
           totally: 'valid',
           :not  =>  :valid,
-          TOTALLY => :valid
+          TOTALLY => :valid,
+          18 => 1 # this is valid, hash rockets are required for ints
         }
         { 'also' =>  'valid' }
       RUBY
