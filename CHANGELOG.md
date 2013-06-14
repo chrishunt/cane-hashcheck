@@ -1,5 +1,13 @@
 # Changelog
 
+#v1.2.0
+*2013-06-14*
+
+[\[8 commits\]](https://github.com/chrishunt/cane-hashcheck/compare/v1.1.0...v1.2.0)
+
+- Hash rockets without whitespace are invalid
+- Hash rockets valid in namespaced rescue
+
 ##v1.1.0
 *2013-05-15*
 
