@@ -1,6 +1,6 @@
+# Creates violations for hashes using pre-Ruby 1.9 hash syntax. Hash rockets
+# are allowed only if the key is a 'string' or CONSTANT.
 module Cane
-  # Creates violations for hashes using pre-Ruby 1.9 hash syntax. Hash rockets
-  # are allowed only if the key is a 'string' or CONSTANT.
   HashCheck = Struct.new(:options) do
 
     DESCRIPTION  = 'Ruby 1.9 hash syntax violation'
