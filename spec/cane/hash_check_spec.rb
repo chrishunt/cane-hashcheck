@@ -28,6 +28,10 @@ describe Cane::HashCheck do
           'also' => 'valid',
           "and also" => 'valid'
         }
+
+        begin
+        rescue Foobar::Test => valid
+        end
       RUBY
     end
 
