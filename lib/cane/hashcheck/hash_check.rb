@@ -49,11 +49,16 @@ module Cane
     end
 
     def invalid?(line)
-      line =~ /([^:]:[A-z1-9\"\"\_]+)\s+=>\s+/
+      line =~ hash_rocket_regex
     end
 
     def file_names
       Dir[ options.fetch(:hash_glob){ DEFAULT_GLOB } ]
+    end
+
+    # http://rubular.com/r/p8AoYTwOWO
+    def hash_rocket_regex
+      /(?:[^:]:\w+)\s*=>\s*/
     end
   end
 end

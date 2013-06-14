@@ -22,21 +22,20 @@ describe Cane::HashCheck do
           :not => :valid,
           TOTALLY => :valid,
           LOTS_OF    =>   :whitespace_is_valid,
-          18 => 1 # this is valid, hash rockets are required for ints
+          18 =>, 1 # this is valid, hash rockets are required for ints
+          :no_whitespace=>:still_not_valid
         }
         {
           'also' => 'valid',
           "and also" => 'valid'
         }
 
-        begin
         rescue Foobar::Test => valid
-        end
       RUBY
     end
 
     it 'has a violation for each invalid hash rocket' do
-      expect(subject.violations.count).to eq 2
+      expect(subject.violations.count).to eq 3
     end
 
     it 'puts the offending file name in the violation' do
@@ -48,6 +47,7 @@ describe Cane::HashCheck do
     it 'puts the offending line number in the violation' do
       expect(subject.violations[0][:line]).to eq 2
       expect(subject.violations[1][:line]).to eq 5
+      expect(subject.violations[2][:line]).to eq 9
     end
   end
 
